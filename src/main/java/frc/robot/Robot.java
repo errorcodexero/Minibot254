@@ -22,10 +22,10 @@ import static edu.wpi.first.units.Units.Rotations;
 /** This is a demo program showing how to use Mecanum control with the MecanumDrive class. */
 public class Robot extends LoggedRobot {
 
-  private static final int kFrontLeftChannel = 4;
+  private static final int kFrontLeftChannel = 2;
   private static final int kRearLeftChannel = 1;
-  private static final int kFrontRightChannel = 2;
-  private static final int kRearRightChannel = 3;
+  private static final int kFrontRightChannel = 3;
+  private static final int kRearRightChannel = 4;
   private static final int intakeChannel = 5;
 
   private static final int kJoystickChannel = 0;
@@ -93,8 +93,8 @@ public class Robot extends LoggedRobot {
     // movement, and Z axis for rotation.
     db.driveCartesian(-gamepad.getLeftY(), -gamepad.getLeftX(), -gamepad.getRightX());
 
-    boolean isLeftBumperPressed = gamepad.getLeftBumperButtonPressed();
-    boolean isRightBumperPressed = gamepad.getRightBumperButtonPressed();
+    boolean isLeftBumperPressed = gamepad.getLeftBumperButton();
+    boolean isRightBumperPressed = gamepad.getRightBumperButton();
 
     if (isLeftBumperPressed == true){
       intake.set(0.5);
