@@ -14,6 +14,7 @@ import com.revrobotics.ResetMode;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.config.SparkMaxConfig;
+import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
@@ -57,6 +58,7 @@ public class Robot extends LoggedRobot {
     
     mainConfig
       .smartCurrentLimit(60)
+      .idleMode(IdleMode.kBrake)
       .encoder.countsPerRevolution(538);
     
     SparkMaxConfig invertedConfig = new SparkMaxConfig();
